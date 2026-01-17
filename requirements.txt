@@ -1,0 +1,10 @@
+modal
+pyenchant
+pandas
+pypdf
+transformers
+huggingface-hub
+langchain 
+dotenv
+fastapi
+uvicorn[standard]
