@@ -1,0 +1,10 @@
+-r requirements.txt
+
+pyenchant
+pandas
+pypdf
+transformers
+huggingface-hub
+langchain 
+fastapi
+uvicorn[standard]
