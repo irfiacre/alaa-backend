@@ -4,6 +4,8 @@ from pydantic import BaseModel
 from fastapi.responses import StreamingResponse
 
 from api.backend.main import sse_ask_question
+from api.backend.pdf_processing import extract_pdf_text
+
 
 app = FastAPI(docs_url="/api/docs", openapi_url="/api/openapi.json")
 
@@ -40,3 +42,14 @@ async def sse_chat_with_model(req: QuestionRequest):
             "Connection": "keep-alive",
         }
     )
+
+
+class FileURLRequest(BaseModel):
+    file_url: str
+
+@app.post("/api/extract-text/")
+async def extract_text_from_pdf(req: FileURLRequest):
+    """
+    Method extracts the text from a pdf file_url.
+    """
+    return {"message": extract_pdf_text(req.file_url)}
