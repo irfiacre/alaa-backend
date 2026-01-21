@@ -2,6 +2,7 @@ from io import BytesIO
 import pypdf
 import requests
 
+# To try to improve it using docling - https://www.docling.ai/
 def extract_pdf_text(file_url: str):
     """
     Reads the content of a document, and returns the text. 
